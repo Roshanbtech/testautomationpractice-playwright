@@ -1,0 +1,28 @@
+{
+  "TC_CHECKBOX_POS_001": {
+    "day": "Sunday"
+  },
+
+  "TC_CHECKBOX_POS_002": {
+    "days": [
+      "Monday",
+      "Tuesday"
+    ]
+  },
+
+  "TC_CHECKBOX_POS_003": {
+    "day": "Sunday"
+  },
+
+  "TC_CHECKBOX_EDGE_001": {
+    "days": [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ]
+  }
+}
