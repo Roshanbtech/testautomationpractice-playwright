@@ -1,0 +1,14 @@
+{
+  "TC_RADIO_POS_001": {
+    "gender": "male"
+  },
+
+  "TC_RADIO_POS_002": {
+    "gender": "female"
+  },
+
+  "TC_RADIO_VAL_001": {
+    "firstSelection": "male",
+    "secondSelection": "female"
+  }
+}
