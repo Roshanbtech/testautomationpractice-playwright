@@ -1,0 +1,41 @@
+{
+  "TC_FORM_POS_001": {
+    "name": "Roshan"
+  },
+
+  "TC_FORM_NEG_001": {
+    "name": ""
+  },
+
+  "TC_FORM_NEG_002": {
+    "inputName": "VeryLongUsername123",
+    "expectedName": "VeryLongUsernam"
+  },
+
+  "TC_FORM_POS_002": {
+    "email": "roshan@test.com"
+  },
+
+  "TC_FORM_NEG_003": {
+    "email": "roshan.com"
+  },
+
+  "TC_FORM_POS_003": {
+    "phone": "9876543210"
+  },
+
+  "TC_FORM_NEG_004": {
+    "phone": "abcdef"
+  },
+
+  "TC_FORM_EDGE_001": {
+    "address": "Address Line 1\nAddress Line 2"
+  },
+
+  "TC_FORM_NEG_005": {
+    "name": "",
+    "email": "",
+    "phone": "",
+    "address": ""
+  }
+}
