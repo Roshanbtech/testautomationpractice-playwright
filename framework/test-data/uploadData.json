@@ -1,0 +1,23 @@
+{
+  "TC_UPLOAD_POS_001": {
+    "file": "tests/test-files/sample.pdf",
+    "expectedFileName": "sample.pdf"
+  },
+
+  "TC_UPLOAD_NEG_001": {
+    "file": "",
+    "expectedFileName": ""
+  },
+
+  "TC_UPLOAD_POS_002": {
+    "files": [
+      "tests/test-files/sample1.pdf",
+      "tests/test-files/sample2.pdf"
+    ]
+  },
+
+  "TC_UPLOAD_VAL_001": {
+    "file": "tests/test-files/sample.pdf",
+    "expectedFileName": "sample.pdf"
+  }
+}
