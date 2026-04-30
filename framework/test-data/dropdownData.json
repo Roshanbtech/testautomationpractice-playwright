@@ -1,0 +1,23 @@
+{
+  "TC_DROPDOWN_POS_001": {
+    "country": "india"
+  },
+
+  "TC_DROPDOWN_VAL_001": {
+    "countries": [
+      "India",
+      "Japan"
+    ]
+  },
+
+  "TC_MULTISELECT_POS_001": {
+    "colors": [
+      "Red",
+      "Blue"
+    ]
+  },
+
+  "TC_MULTISELECT_NEG_001": {
+    "color": "Red"
+  }
+}
