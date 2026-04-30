@@ -1,0 +1,29 @@
+{
+  "TC_DATE_POS_001": {
+    "date": "04/28/2026"
+  },
+
+  "TC_DATE_VAL_001": {
+    "date": "04/28/2026",
+    "format": "04/28/2026"
+  },
+
+  "TC_DATE_VAL_002": {
+    "invalidText": "Random Text"
+  },
+
+  "TC_DATE_POS_002": {
+    "startDate": "2026-04-01",
+    "endDate": "2026-04-10"
+  },
+
+  "TC_DATE_NEG_001": {
+    "startDate": "2026-04-10",
+    "endDate": "2026-04-01"
+  },
+
+  "TC_DATE_EDGE_001": {
+    "startDate": "2026-04-05",
+    "endDate": "2026-04-05"
+  }
+}
