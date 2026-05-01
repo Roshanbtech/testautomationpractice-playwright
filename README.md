@@ -1,4 +1,10 @@
-# Playwright UI Automation Framework
+<h1 align="center">
+  <img src="https://playwright.dev/img/playwright-logo.svg" width="40" valign="middle" />
+  Playwright UI Automation Framework
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="35" valign="middle" />
+</h1>
+
+---
 
 A scalable and modular UI automation framework built using Playwright and TypeScript for automating UI components of the Test Automation Practice application.
 
