@@ -11,3 +11,11 @@ playwright-report/
 test-results
 screenshots
 playwright-report
+logs/
+*.log
+trace.zip
+*.trace
+.png
+*.webm
+.DS_Store
+Thumbs.db
