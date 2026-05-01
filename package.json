@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "test": "npx playwright test",
-  "test:headed": "npx playwright test --headed",
-  "test:debug": "npx playwright test --debug",
-  "report": "npx playwright show-report"
-},
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:ui": "npx playwright test --ui",
+    "codegen": "npx playwright codegen",
+    "codegen:app": "npx playwright codegen https://testautomationpractice.blogspot.com/",
+    "report": "npx playwright show-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
