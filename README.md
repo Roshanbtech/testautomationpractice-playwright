@@ -4,19 +4,25 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="35" valign="middle" />
 </h1>
 
----
-
-A scalable and modular UI automation framework built using Playwright and TypeScript for automating UI components of the Test Automation Practice application.
+<p align="center">
+  Scalable UI Automation Framework using Playwright + TypeScript
+</p>
 
 ---
 
 # Project Overview
+
+A scalable and modular UI automation framework built using Playwright and TypeScript for automating UI components of the Test Automation Practice application.
 
 This framework follows a professional enterprise-style automation architecture with:
 
 * Modular component-based design
 * Reusable utilities and validators
 * Data-driven testing approach
+* Environment-based configuration
+* Global setup implementation
+* Playwright debugging support
+* Playwright CodeGen support
 * Feature branch Git workflow
 * Scalable folder structure
 * Playwright TypeScript automation
@@ -37,13 +43,14 @@ The framework automates multiple UI modules including:
 * TypeScript
 * Playwright
 * Node.js
+* Winston Logger
 * Git & GitHub
 
 ---
 
 # Project Structure
 
-```text id="5m2q8v"
+```text
 playwright-ui-framework/
 │
 ├── framework/
@@ -51,18 +58,22 @@ playwright-ui-framework/
 │   ├── config/
 │   ├── fixtures/
 │   ├── pages/
+│   ├── setup/
 │   ├── test-data/
-│   ├── validators/
-│   └── utils/
+│   ├── utils/
+│   └── validators/
+│
+├── logs/
 │
 ├── tests/
 │   ├── ui/
 │   └── test-files/
 │
+├── .env
+├── .gitignore
 ├── playwright.config.ts
 ├── package.json
-├── tsconfig.json
-└── .gitignore
+└── tsconfig.json
 ```
 
 ---
@@ -71,9 +82,9 @@ playwright-ui-framework/
 
 ## Modular Component Architecture
 
-Each UI element is separated into its own module:
+Each UI element is separated into its own reusable component module.
 
-```text id="1q8m4r"
+```text
 components/
 ├── form/
 ├── checkbox/
@@ -87,11 +98,11 @@ components/
 
 ## Data-Driven Testing
 
-Test data is maintained separately using JSON files.
+Test data is maintained separately using JSON files for better maintainability and scalability.
 
 Example:
 
-```text id="8v1m3p"
+```text
 framework/test-data/formData.json
 ```
 
@@ -99,7 +110,48 @@ framework/test-data/formData.json
 
 ## Reusable Validators
 
-Validation logic is separated from test implementation for better maintainability.
+Validation logic is separated from test implementation for cleaner and reusable assertions.
+
+---
+
+## Environment-Based Configuration
+
+Environment handling is implemented using `.env` configuration.
+
+Supported environments:
+
+* DEV
+* UAT
+* PROD
+
+Example:
+
+```env
+ENV=dev
+
+BASE_URL_DEV=https://testautomationpractice.blogspot.com/
+
+BASE_URL_UAT=https://testautomationpractice.blogspot.com/
+
+BASE_URL_PROD=https://testautomationpractice.blogspot.com/
+```
+
+---
+
+## Global Setup
+
+Playwright Global Setup is implemented for:
+
+* Environment initialization
+* Application availability validation
+* Framework-level setup execution
+* Centralized logging support
+
+Location:
+
+```text
+framework/setup/globalSetup.ts
+```
 
 ---
 
@@ -109,8 +161,57 @@ Reusable utilities included for:
 
 * Logging
 * Wait handling
-* Screenshots
 * Common helper methods
+* Framework-level reusable support
+
+---
+
+## Logging Support
+
+Winston logger integration is implemented for framework-level logging.
+
+Features:
+
+* Console logging
+* File logging
+* Timestamp support
+* Execution tracking
+
+Example log file:
+
+```text
+logs/framework.log
+```
+
+---
+
+# Debugging Support
+
+The framework includes multiple Playwright debugging capabilities:
+
+* Playwright Inspector
+* Playwright UI Mode
+* Trace Viewer
+* Video Recording
+* Screenshot Capture
+* `page.pause()` runtime debugging
+
+---
+
+# Playwright CodeGen Support
+
+Playwright CodeGen is used for:
+
+* Automatic locator generation
+* UI interaction recording
+* Faster script development
+* Locator debugging and inspection
+
+Example generated locator:
+
+```ts
+page.getByRole('textbox', { name: 'Name' })
+```
 
 ---
 
@@ -120,7 +221,7 @@ This project follows a professional feature-branch workflow.
 
 Example workflow:
 
-```text id="2q7m5v"
+```text
 main
  ├── feature/initial-framework-setup
  ├── feature/form-module
@@ -133,7 +234,7 @@ main
 
 Workflow followed:
 
-```text id="9m4q1p"
+```text
 Feature Branch
     ↓
 Commit Changes
@@ -153,7 +254,7 @@ Delete Feature Branch
 
 ## Clone Repository
 
-```bash id="6q2m8v"
+```bash
 git clone <repository-url>
 ```
 
@@ -161,7 +262,7 @@ git clone <repository-url>
 
 ## Navigate To Project
 
-```bash id="1p8m5q"
+```bash
 cd playwright-ui-framework
 ```
 
@@ -169,8 +270,28 @@ cd playwright-ui-framework
 
 ## Install Dependencies
 
-```bash id="7m3q1v"
+```bash
 npm install
+```
+
+---
+
+# Available Scripts
+
+```bash
+npm test                 # Run all tests
+
+npm run test:headed      # Run tests in headed mode
+
+npm run test:debug       # Run tests in debug mode
+
+npm run test:ui          # Open Playwright UI mode
+
+npm run codegen          # Open Playwright CodeGen
+
+npm run codegen:app      # Open CodeGen with application URL
+
+npm run report           # Open Playwright HTML report
 ```
 
 ---
@@ -179,7 +300,7 @@ npm install
 
 ## Run All Tests
 
-```bash id="4v9m2q"
+```bash
 npx playwright test
 ```
 
@@ -187,7 +308,7 @@ npx playwright test
 
 ## Run Specific Test File
 
-```bash id="8q1m6p"
+```bash
 npx playwright test tests/ui/form.ui.spec.ts
 ```
 
@@ -195,15 +316,31 @@ npx playwright test tests/ui/form.ui.spec.ts
 
 ## Run Tests In UI Mode
 
-```bash id="3p8m5q"
+```bash
 npx playwright test --ui
+```
+
+---
+
+## Run Tests In Debug Mode
+
+```bash
+npx playwright test --debug
+```
+
+---
+
+## Open Playwright CodeGen
+
+```bash
+npx playwright codegen https://testautomationpractice.blogspot.com/
 ```
 
 ---
 
 # Generate Playwright Report
 
-```bash id="6m2q9v"
+```bash
 npx playwright show-report
 ```
 
@@ -220,6 +357,9 @@ npx playwright show-report
 | Dropdown Automation     | Completed |
 | Date Picker Automation  | Completed |
 | Upload Automation       | Completed |
+| Global Setup            | Completed |
+| Debugging Support       | Completed |
+| CodeGen Support         | Completed |
 
 ---
 
@@ -229,6 +369,11 @@ npx playwright show-report
 * Component-Based Architecture
 * Reusable Utility Functions
 * Separate Test Data Management
+* Playwright Fixtures
+* Global Setup Configuration
+* Environment-Based Configuration
+* Debugging & Trace Support
+* Data-Driven Testing
 * Clean Git Commit History
 * Feature-Based Branching
 * Scalable Folder Structure
@@ -237,17 +382,18 @@ npx playwright show-report
 
 # Future Enhancements
 
-* CI/CD Integration
+* Jenkins CI/CD Integration
 * GitHub Actions Pipeline
 * Allure Reporting
 * Cross Browser Parallel Execution
-* API Integration Testing
+* API Automation Integration
 * Docker Support
+* Cloud Execution Support
 
 ---
 
 # Author
 
-Roshan Reji
+## Roshan Reji
 
 SDET | Playwright Automation | TypeScript Automation Framework Development
