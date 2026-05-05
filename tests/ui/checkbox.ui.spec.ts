@@ -9,7 +9,7 @@ test.describe('CHECKBOX UI TESTS', () => {
   });
 
   test(
-    'TC_CHECKBOX_POS_001 - Verify single checkbox selection',
+    '@smoke TC_CHECKBOX_POS_001 - Verify single checkbox selection',
     async ({ homePage }) => {
       const day = checkBoxData.TC_CHECKBOX_POS_001.day as keyof typeof homePage.checkbox.locators;
       await homePage.checkbox.selectDay(day);
@@ -22,7 +22,7 @@ test.describe('CHECKBOX UI TESTS', () => {
   );
 
   test(
-    'TC_CHECKBOX_POS_002 - Verify multiple checkbox selection',
+    '@smoke TC_CHECKBOX_POS_002 - Verify multiple checkbox selection',
     async ({ homePage }) => {
 
       const days = checkBoxData.TC_CHECKBOX_POS_002.days as Array<keyof typeof homePage.checkbox.locators>;
@@ -35,7 +35,7 @@ test.describe('CHECKBOX UI TESTS', () => {
   );
 
   test(
-    'TC_CHECKBOX_POS_003 - Verify checkbox deselection',
+    '@regression TC_CHECKBOX_POS_003 - Verify checkbox deselection',
     async ({ homePage }) => {
 
       const day = checkBoxData.TC_CHECKBOX_POS_003.day as keyof typeof homePage.checkbox.locators;
@@ -49,7 +49,7 @@ test.describe('CHECKBOX UI TESTS', () => {
   );
 
   test(
-    'TC_CHECKBOX_EDGE_001 - Verify all checkboxes selection',
+    '@regression TC_CHECKBOX_EDGE_001 - Verify all checkboxes selection',
     async ({ homePage }) => {
 
       const days = checkBoxData.TC_CHECKBOX_EDGE_001.days as Array<keyof typeof homePage.checkbox.locators>;

@@ -9,7 +9,7 @@ test.describe('FILE UPLOAD UI TESTS', () => {
     await homePage.navigate();
   });
 
-  test('TC_UPLOAD_POS_001 - Verify single file upload',
+  test('@smoke TC_UPLOAD_POS_001 - Verify single file upload',
     async ({ homePage}) => {
 
       await homePage.upload.uploadSingleFile(
@@ -25,7 +25,7 @@ test.describe('FILE UPLOAD UI TESTS', () => {
   );
 
   test(
-    'TC_UPLOAD_NEG_001 - Verify upload without file',
+    '@regression TC_UPLOAD_NEG_001 - Verify upload without file',
     async ({ homePage }) => {
 
       await homePage.upload.clearSingleFile();
@@ -36,7 +36,7 @@ test.describe('FILE UPLOAD UI TESTS', () => {
   );
 
   test(
-    'TC_UPLOAD_POS_002 - Verify multiple file upload',
+    '@regression TC_UPLOAD_POS_002 - Verify multiple file upload',
     async ({ homePage }) => {
 
       await homePage.upload.uploadMultipleFiles(
@@ -52,7 +52,7 @@ test.describe('FILE UPLOAD UI TESTS', () => {
   );
 
   test(
-    'TC_UPLOAD_VAL_001 - Verify uploaded file details',
+    '@regression TC_UPLOAD_VAL_001 - Verify uploaded file details',
     async ({ homePage }) => {
 
       await homePage.upload.uploadSingleFile(

@@ -16,7 +16,7 @@ test.describe('FORM UI TESTS', () => {
     );
 
   test(
-    'TC_FORM_POS_001 - Verify valid name input',
+    '@smoke TC_FORM_POS_001 - Verify valid name input',
     async ({ homePage }) => {
 
       await homePage.form.enterName(
@@ -31,7 +31,7 @@ test.describe('FORM UI TESTS', () => {
   );
 
   test(
-    'TC_FORM_NEG_001 - Verify empty name field',
+    '@regression TC_FORM_NEG_001 - Verify empty name field',
     async ({ homePage }) => {
 
       await homePage.form.enterName(
@@ -46,7 +46,7 @@ test.describe('FORM UI TESTS', () => {
   );
 
   test(
-    'TC_FORM_NEG_002 - Verify name max character limit',
+    '@regression TC_FORM_NEG_002 - Verify name max character limit',
     async ({ homePage }) => {
 
       await homePage.form.enterName(
@@ -61,7 +61,7 @@ test.describe('FORM UI TESTS', () => {
   );
 
   test(
-    'TC_FORM_POS_002 - Verify valid email input',
+    '@smoke TC_FORM_POS_002 - Verify valid email input',
     async ({ homePage }) => {
 
       await homePage.form.enterEmail(
@@ -76,7 +76,7 @@ test.describe('FORM UI TESTS', () => {
   );
 
   test(
-    'TC_FORM_NEG_003 - Verify invalid email format',
+    '@regression TC_FORM_NEG_003 - Verify invalid email format',
     async ({ homePage }) => {
 
       await homePage.form.enterEmail(
@@ -91,7 +91,7 @@ test.describe('FORM UI TESTS', () => {
   );
 
   test(
-    'TC_FORM_POS_003 - Verify valid phone number input',
+    '@smoke TC_FORM_POS_003 - Verify valid phone number input',
     async ({ homePage }) => {
 
       await homePage.form.enterPhone(
@@ -106,7 +106,7 @@ test.describe('FORM UI TESTS', () => {
   );
 
   test(
-    'TC_FORM_NEG_004 - Verify invalid phone number input',
+    '@regression TC_FORM_NEG_004 - Verify invalid phone number input',
     async ({ homePage }) => {
 
       await homePage.form.enterPhone(
@@ -121,7 +121,7 @@ test.describe('FORM UI TESTS', () => {
   );
 
   test(
-    'TC_FORM_EDGE_001 - Verify multiline address input',
+    '@regression TC_FORM_EDGE_001 - Verify multiline address input',
     async ({ homePage }) => {
 
       await homePage.form.enterAddress(
@@ -136,7 +136,7 @@ test.describe('FORM UI TESTS', () => {
   );
 
   test(
-    'TC_FORM_NEG_005 - Verify empty mandatory fields',
+    '@regression TC_FORM_NEG_005 - Verify empty mandatory fields',
     async ({ homePage }) => {
 
       await homePage.form.enterName(

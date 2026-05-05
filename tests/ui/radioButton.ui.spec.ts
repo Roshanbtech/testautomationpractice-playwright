@@ -9,7 +9,7 @@ test.describe('RADIO BUTTON UI TESTS', () => {
   });
 
   test(
-    'TC_RADIO_POS_001 - Verify Male radio button selection',
+    '@smoke TC_RADIO_POS_001 - Verify Male radio button selection',
     async ({ homePage }) => {
       const gender = radioButtonData.TC_RADIO_POS_001.gender as 'male';
 
@@ -23,7 +23,7 @@ test.describe('RADIO BUTTON UI TESTS', () => {
   );
 
   test(
-    'TC_RADIO_POS_002 - Verify Female radio button selection',
+    '@smoke TC_RADIO_POS_002 - Verify Female radio button selection',
     async ({ homePage }) => {
 
       const gender = radioButtonData.TC_RADIO_POS_002.gender as 'female';
@@ -37,7 +37,7 @@ test.describe('RADIO BUTTON UI TESTS', () => {
   );
 
   test(
-  'TC_RADIO_VAL_001 - Verify only one radio button can be selected',
+    '@regression TC_RADIO_VAL_001 - Verify only one radio button can be selected',
   async ({ homePage }) => {
 
     const firstSelection =

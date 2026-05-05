@@ -9,7 +9,7 @@ test.describe('DROPDOWN UI TESTS', () => {
     await homePage.navigate();
   });
 
-  test('TC_DROPDOWN_POS_001 - Verify country dropdown selection',
+  test('@smoke TC_DROPDOWN_POS_001 - Verify country dropdown selection',
     async ({ homePage }) => {
 
       await homePage.dropdown.selectCountry(
@@ -25,7 +25,7 @@ test.describe('DROPDOWN UI TESTS', () => {
   );
 
   test(
-    'TC_DROPDOWN_VAL_001 - Verify country dropdown values',
+    '@regression TC_DROPDOWN_VAL_001 - Verify country dropdown values',
     async ( { homePage } ) => {
 
       await DropdownValidators
@@ -37,7 +37,7 @@ test.describe('DROPDOWN UI TESTS', () => {
   );
 
   test(
-    'TC_MULTISELECT_POS_001 - Verify multi-select dropdown',
+    '@regression TC_MULTISELECT_POS_001 - Verify multi-select dropdown',
     async ( { homePage } ) => {
 
       await homePage.dropdown.selectMultipleColors(
@@ -53,7 +53,7 @@ test.describe('DROPDOWN UI TESTS', () => {
   );
 
   test(
-    'TC_MULTISELECT_NEG_001 - Verify dropdown deselection',
+    '@regression TC_MULTISELECT_NEG_001 - Verify dropdown deselection',
     async ( { homePage } ) => {
 
       await homePage.dropdown.selectMultipleColors([dropdownData.TC_MULTISELECT_NEG_001.color]);

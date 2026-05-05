@@ -10,7 +10,7 @@ test.describe('DATE PICKER UI TESTS', () => {
   });
 
   test(
-    'TC_DATE_POS_001 - Verify valid date selection',
+    '@smoke TC_DATE_POS_001 - Verify valid date selection',
     async ({ homePage}) => {
 
       await homePage.datePicker.selectDate(
@@ -26,7 +26,7 @@ test.describe('DATE PICKER UI TESTS', () => {
   );
 
   test(
-    'TC_DATE_VAL_001 - Verify date format validation',
+    '@regression TC_DATE_VAL_001 - Verify date format validation',
     async ({ homePage }) => {
 
       await homePage.datePicker.selectDate(
@@ -41,7 +41,7 @@ test.describe('DATE PICKER UI TESTS', () => {
   );
 
   test(
-    'TC_DATE_VAL_002 - Verify readonly date picker behavior',
+    '@regression TC_DATE_VAL_002 - Verify readonly date picker behavior',
     async ({ homePage }) => {
 
       await homePage.datePicker.tryTypingReadonlyField(
@@ -57,7 +57,7 @@ test.describe('DATE PICKER UI TESTS', () => {
   );
 
   test(
-    'TC_DATE_POS_002 - Verify valid date range',
+    '@regression TC_DATE_POS_002 - Verify valid date range',
     async ({ homePage }) => {
 
       await homePage.datePicker.enterStartDate(
@@ -78,7 +78,7 @@ test.describe('DATE PICKER UI TESTS', () => {
   );
 
   test(
-    'TC_DATE_NEG_001 - Verify invalid date range',
+    '@regression TC_DATE_NEG_001 - Verify invalid date range',
     async ({ homePage }) => {
 
       await homePage.datePicker.enterStartDate(
@@ -98,7 +98,7 @@ test.describe('DATE PICKER UI TESTS', () => {
   );
 
   test(
-    'TC_DATE_EDGE_001 - Verify same start and end date',
+    '@regression TC_DATE_EDGE_001 - Verify same start and end date',
     async ({ homePage }) => {
 
       await homePage.datePicker.enterStartDate(
