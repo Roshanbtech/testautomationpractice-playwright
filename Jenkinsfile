@@ -51,6 +51,13 @@ pipeline {
             }
         }
 
+        stage('Clean Reports') {
+            steps {
+                bat 'if exist allure-results rmdir /s /q allure-results'
+                bat 'if exist allure-report rmdir /s /q allure-report'
+             }
+        }
+
         // stage('Smoke Tests') {
         //     when {
         //         expression { params.suite == 'smoke'}
