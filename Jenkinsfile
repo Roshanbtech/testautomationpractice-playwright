@@ -1,6 +1,10 @@
 pipeline {
     agent any 
 
+    tools {
+        jdk 'jdk21'
+    }
+
     parameters {
         choice(
             name: 'script',
@@ -18,7 +22,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/Roshanbtech/testautomationpractice-playwright.git'
+                git branch: 'main', url: 'https://github.com/Roshanbtech/testautomationpractice-playwright.git'
             }
         }
 
