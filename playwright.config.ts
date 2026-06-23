@@ -1,12 +1,11 @@
-import { defineConfig } from '@playwright/test';
-import dotenv from 'dotenv';
-import { BASE_URL } from './framework/config/env';
+import { defineConfig } from "@playwright/test";
+import dotenv from "dotenv";
+import { BASE_URL } from "./framework/config/env";
 
-dotenv.config({ path: '.env' });
+dotenv.config({ path: ".env" });
 
 export default defineConfig({
-
-  testDir: './tests',
+  testDir: "./tests",
 
   fullyParallel: true,
 
@@ -14,25 +13,25 @@ export default defineConfig({
 
   timeout: 30000,
 
-  globalSetup: require.resolve('./framework/setup/globalSetup'),
+  globalSetup: require.resolve("./framework/setup/globalSetup"),
 
-  reporter: [
-    ['html'],
-    ['list']
+  reporter: [["list"], ["html"], ["allure-playwright"]],
+
+  projects: [
+    { name: "chromium", use: { browserName: "chromium" } },
+    { name: "firefox", use: { browserName: "firefox" } },
+    { name: "webkit", use: { browserName: "webkit" } },
   ],
 
   use: {
-
     baseURL: BASE_URL,
-
-    browserName: 'chromium',
 
     headless: process.env.CI ? true : false,
 
-    screenshot: 'only-on-failure',
+    screenshot: "only-on-failure",
 
-    video: 'retain-on-failure',
+    video: "retain-on-failure",
 
-    trace: 'retain-on-failure'
-  }
+    trace: "retain-on-failure",
+  },
 });
